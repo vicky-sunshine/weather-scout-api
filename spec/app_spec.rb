@@ -5,7 +5,7 @@ describe 'Getting the root of the service' do
   it 'Should return ok' do
     get '/'
     last_response.must_be :ok?
-    last_response.body.must_match(/Weatherscout service/i)
+    last_response.body.must_match(/Hello, This is Weather Scout service./i)
   end
 end
 
