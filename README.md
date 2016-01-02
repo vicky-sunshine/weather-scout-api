@@ -1,4 +1,6 @@
 # WeatherScout Webservice
+[ ![Codeship Status for weatherscout-api](https://codeship.io/projects/a23b58c0-5dc5-0133-8052-3a8f5e5e1065/status?branch=master)](https://codeship.com/projects/124805)
+
 
 A simple version of web service that scrapes [Central Web Bureau][1] data using the
 [weatherscout][2] gem
