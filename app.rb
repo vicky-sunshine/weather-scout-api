@@ -11,7 +11,7 @@ class WeatherScoutApp < Sinatra::Base
   end
 
   get_root = lambda do
-    'Weatherscout service is up and working. See documentation at its ' \
+    'Hello, This is Weather Scout service. Current API version is v1. See Homepage ' \
       '<a href="https://github.com/vicky-sunshine/weather-scout-api">' \
       'Github repo</a>'
   end
