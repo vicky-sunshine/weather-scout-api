@@ -8,4 +8,10 @@ module WeatherHelpers
   rescue
     halt 404
   end
+
+  def get_weekly_weather(city)
+    WeeklyWeather.new(city)
+  rescue
+    halt 404
+  end
 end
