@@ -9,7 +9,7 @@ require 'json'
 #   puts weather.to_json
 #
 class DailyWeather
-  attr_reader :daily_weather, :city, :weathers, :tips
+  attr_reader :city, :weathers, :tips
   def initialize(city)
     daily_weather = WeatherScraper::DailyWeather.new(city)
     @city = daily_weather.city
