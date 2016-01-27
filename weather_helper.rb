@@ -1,4 +1,5 @@
 require_relative './model/daily_weather'
+require_relative './model/weekly_weather'
 
 ##
 # Helpers for main Sinatra web application
