@@ -16,7 +16,7 @@ class WeatherScoutApp < Sinatra::Base
       'Github repo</a>'
   end
 
-  post_weather = lambda do
+  post_daily_weather = lambda do
     content_type :json
     begin
       req = JSON.parse(request.body.read)
@@ -26,6 +26,17 @@ class WeatherScoutApp < Sinatra::Base
     get_daily_weather(req['city']).to_json
   end
 
+  post_weekly_weather = lambda do
+    content_type :json
+    begin
+      req = JSON.parse(request.body.read)
+    rescue
+      halt 400
+    end
+    get_weekly_weather(req['city']).to_json
+  end
+
   get '/', &get_root
-  post '/api/v1/daily_weather', &post_weather
+  post '/api/v1/daily_weather', &post_daily_weather
+  post '/api/v1/weekly_weather', &post_weekly_weather
 end

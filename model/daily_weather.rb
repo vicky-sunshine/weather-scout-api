@@ -9,28 +9,17 @@ require 'json'
 #   puts weather.to_json
 #
 class DailyWeather
-  attr_reader :city, :date, :temperature_day, :temperature_night,
-              :condition_day, :condition_night, :rain_probability, :tips
+  attr_reader :city, :weathers, :tips
   def initialize(city)
-    @weather = DailyWeatherScraper::DailyWeather.new(city)
-    @city = @weather.city
-    @date = @weather.date
-    @temperature_day = @weather.temperature_day
-    @temperature_night = @weather.temperature_night
-    @condition_day = @weather.condition_day
-    @condition_night = @weather.condition_night
-    @rain_probability = @weather.rain_probability
-    @tips = @weather.tips
+    daily_weather = WeatherScraper::DailyWeather.new(city)
+    @city = daily_weather.city
+    @weathers = daily_weather.weathers
+    @tips = daily_weather.tips
   end
 
   def to_json
     {'city' => @city,
-     'date' => @date,
-     'temperature_day' => @temperature_day,
-     'temperature_night' => @temperature_night,
-     'condition_day' => @condition_day,
-     'condition_night' => @condition_night,
-     'rain_probability' => @rain_probability,
+     'weathers' => @weathers,
      'tips' => @tips}.to_json
   end
 
